@@ -595,7 +595,9 @@ static int parse_hunk_body(
 			goto done;
 		}
 
-		if (ctx->parse_ctx.line_len == 0 || ctx->parse_ctx.line[ctx->parse_ctx.line_len - 1] != '\n') {
+		if (ctx->parse_ctx.line_len == 0 ||
+			(ctx->parse_ctx.remain_len > ctx->parse_ctx.line_len && ctx->parse_ctx.line[ctx->parse_ctx.line_len - 1] != '\n')) {
+
 			error = git_parse_err("invalid patch instruction at line %"PRIuZ,
 				ctx->parse_ctx.line_num);
 			goto done;

@@ -926,3 +926,29 @@
 	"@@ -0 +2147483647 @@\n" \
 	"\n" \
 	"  "
+
+#define PATCH_NO_EOL_AT_END_OF_FILE \
+	"diff --git a/test-file b/test-file\n" \
+	"new file mode 100644\n" \
+	"index 0000000..af431f2 100644\n" \
+	"--- /dev/null\n" \
+	"+++ b/test-file\n" \
+	"@@ -0,0 +1 @@\n" \
+	"+missing EOL at end of diff is ok"
+
+#define PATCH_NO_EOL_MIDDLE \
+	"diff --git a/test-file b/test-file\n" \
+	"new file mode 100644\n" \
+	"index 0000000..af431f2 100644\n" \
+	"--- /dev/null\n" \
+	"+++ b/test-file\n" \
+	"@@ -0,0 +1 @@\n" \
+	"+missing EOL" \
+	"diff --git a/other b/other\n" \
+	"index 0000000..af431f2 100644\n" \
+	"--- a/other\n" \
+	"+++ b/other\n" \
+	"@@ -25,2 +25,2 @@\n" \
+	"aaa\n" \
+	"-bbb\n" \
+	"+ccc\n"
