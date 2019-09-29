@@ -68,9 +68,7 @@ void test_diff_parse__exact_rename(void)
 	    "diff --git a/old_name.c b/new_name.c\n"
 	    "similarity index 100%\n"
 	    "rename from old_name.c\n"
-	    "rename to new_name.c\n"
-	    "-- \n"
-	    "2.9.3\n";
+	    "rename to new_name.c\n";
 	git_diff *diff;
 
 	cl_git_pass(git_diff_from_buffer(
