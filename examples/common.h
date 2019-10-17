@@ -50,6 +50,7 @@
 #define UNUSED(x) (void)(x)
 
 extern int lg2_add(git_repository *repo, int argc, char **argv);
+extern int lg2_apply(git_repository *repo, int argc, char **argv);
 extern int lg2_blame(git_repository *repo, int argc, char **argv);
 extern int lg2_cat_file(git_repository *repo, int argc, char **argv);
 extern int lg2_checkout(git_repository *repo, int argc, char **argv);
